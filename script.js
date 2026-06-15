@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let musicaSorpresa;
   try {
     musicaFondo = new Audio(
-      "PXNDX Procedimientos Para Llegar a un Común Acuerdo.mp3",
+      "fondo.mp3",
     );
     musicaFondo.loop = true;
-    musicaSorpresa = new Audio("Que los Cumpla Feliz.mp3");
+    musicaSorpresa = new Audio("pastel.mp3");
   } catch (e) {
     console.error(
       "Error al cargar los archivos de audio. Asegúrate de que existen.",
