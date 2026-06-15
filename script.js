@@ -6,10 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Preparamos el archivo de audio
   // Asegúrate de que el nombre coincida exactamente con tu archivo .mp3
   const musica = new Audio("PXNDX Procedimientos Para Llegar a un Común Acuerdo.mp3");
+  musica.play();
 
   btnSoplar.addEventListener("click", () => {
-    // Reproducir la música
-    musica.play();
 
     // Ocultamos el pastel
     seccionPastel.classList.add("oculto");
