@@ -1,6 +1,6 @@
 /* Paleta de colores (Tonos Morados) */
 :root {
-    --color-fondo: #f4ebf8;       /* Morado muy claro casi blanco */
+    --color-fondo: #250234;       /* Morado muy claro casi blanco */
     --color-tarjeta: #ffffff;     /* Blanco para el contenedor */
     --color-titulo: #5b2c6f;      /* Morado oscuro y elegante */
     --color-boton: #8e44ad;       /* Morado vibrante */
@@ -90,4 +90,19 @@ body {
     font-style: italic;
     color: var(--color-texto);
     border-radius: 0 8px 8px 0;
+}
+/* Estilos para la pantalla de inicio */
+#pantalla-inicio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-fondo);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Para que esté por encima de todo */
+    transition: opacity 0.5s ease;
 }
