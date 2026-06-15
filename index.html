@@ -1,36 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Feliz Cumpleaños!</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Feliz Cumpleaños!</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <div id="pantalla-inicio">
-        <h1 class="titulo">¡Tengo una sorpresa para ti! 🎁</h1>
-        <button id="btn-empezar" class="boton">Toca aquí para empezar :)</button>
-    </div>
+  <div id="pantalla-inicio">
+    <h1 class="titulo">Nose que poner WA 🎁</h1>
+    <button id="btn-empezar" class="boton">Toca aquí para empezar :)</button>
+  </div>
 
-    <div class="container">
-        <h1 class="titulo">¡Feliz Cumpleaños! 🥳</h1>
+  <div class="container">
+    <h1 class="titulo">¡Feliz Cumpleaños! 🥳</h1>
+
+    <div id="seccion-pastel">
+    <div class="pastel-contenedor">
+        <div id="humo-pastel" class="humo oculto"></div>
         
-        <div id="seccion-pastel">
-            <div class="pastel-animado">
-                🎂 </div>
-            <button id="btn-soplar" class="boton">Soplar las velas 💨</button>
-        </div>
-
-        <div id="seccion-carta" class="oculto">
-            <div class="sobre">
-                <p>Querido/a [Nombre],</p>
-                <p>Aquí puedes escribir un mensaje especial, recordar momentos divertidos y desearle lo mejor en su día.</p>
-                <p>Con cariño,<br>Tu Nombre</p>
+        <div class="velas-agrupacion">
+            <div class="vela vela-1">
+                <div class="llama" id="llama-1"></div>
+            </div>
+            <div class="vela vela-2">
+                <div class="llama" id="llama-2"></div>
+            </div>
+            <div class="vela vela-3">
+                <div class="llama" id="llama-3"></div>
             </div>
         </div>
+        
+        <div class="pastel-piso-superior"></div>
+        <div class="pastel-piso-inferior"></div>
+        <div class="pastel-plato"></div>
     </div>
+    
+    <button id="btn-soplar" class="boton">Soplar las velas 💨</button>
+</div>
 
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <div id="seccion-carta" class="oculto">
+      <div class="sobre">
+        <p>Querido/a [Nombre],</p>
+        <p>
+          Aquí puedes escribir un mensaje especial, recordar momentos
+          divertidos y desearle lo mejor en su día.
+        </p>
+        <p>Con cariño,<br />Tu Nombre</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
+
 </html>

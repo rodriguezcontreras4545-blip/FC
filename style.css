@@ -115,3 +115,113 @@ body {
     z-index: 100;
     transition: opacity 0.5s ease;
 }
+/* =========================================
+   Pastel Interactivo (Hecho con CSS)
+   ========================================= */
+
+/* Contenedor principal del pastel */
+.pastel-contenedor {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Plato */
+.pastel-plato {
+    width: 280px;
+    height: 15px;
+    background-color: #cccccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* Pisos del pastel - Usando tus tonos morados */
+.pastel-piso-inferior {
+    width: 230px;
+    height: 70px;
+    background-color: #7d3c98; /* Morado medio */
+    border-radius: 15px 15px 0 0;
+    margin-bottom: -5px; /* Pequeño truco de superposición */
+}
+
+.pastel-piso-superior {
+    width: 170px;
+    height: 60px;
+    background-color: #af7ac5; /* Lila claro */
+    border-radius: 15px 15px 0 0;
+    margin-bottom: -5px;
+}
+
+/* Velas */
+.velas-agrupacion {
+    position: absolute;
+    top: 50px; /* Ajusta la altura sobre el pastel */
+    display: flex;
+    gap: 30px;
+}
+
+.vela {
+    width: 12px;
+    height: 45px;
+    background: linear-gradient(to bottom, #fff 50%, #eee 50%);
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Las llamas de las velas */
+.llama {
+    position: absolute;
+    width: 12px;
+    height: 18px;
+    background-color: #f39c12; /* Color fuego */
+    border-radius: 50% 50% 20% 20%;
+    top: -22px;
+    left: 0;
+    box-shadow: 0 0 10px rgba(243, 156, 18, 0.7);
+    /* Animación de parpadeo */
+    animation: parpadeo 0.6s infinite ease-in-out alternate;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Para el apagado suave */
+}
+
+/* Animación de parpadeo de llama */
+@keyframes parpadeo {
+    0% { transform: scale(1) translateY(0); opacity: 0.9; }
+    100% { transform: scale(1.1) translateY(-1px); opacity: 1; }
+}
+
+/* =========================================
+   Estados de Animación (Para JavaScript)
+   ========================================= */
+
+/* Clase para apagar las llamas */
+.apagada {
+    opacity: 0 !important;
+    transform: scale(0.5) translateY(10px) !important;
+}
+
+/* Humo */
+.humo {
+    position: absolute;
+    width: 4px;
+    height: 0px;
+    background-color: rgba(200, 200, 200, 0.6);
+    top: 60px;
+    border-radius: 2px;
+    transition: all 1.5s ease-out;
+    opacity: 0;
+}
+
+/* Cuando el humo se activa */
+.humo.activo {
+    opacity: 1;
+    height: 100px;
+    transform: translateY(-50px);
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 0 20px 10px rgba(200, 200, 200, 0.2);
+}
