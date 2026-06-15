@@ -7,15 +7,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const seccionPastel = document.getElementById("seccion-pastel");
   const seccionCarta = document.getElementById("seccion-carta");
   const humo = document.getElementById("humo-pastel");
+  const btnMusicaFondo = document.getElementById("btn-musica-fondo");
+  const controlesPastel = document.getElementById("controles-pastel");
+  let musicaFondoPausada = false;
 
   // Preparamos los dos archivos de audio
   // Usamos try/catch para evitar que un error aquí detenga el sitio
   let musicaFondo;
   let musicaSorpresa;
   try {
-    musicaFondo = new Audio("fondo.mp3");
+    musicaFondo = new Audio(
+      "PXNDX Procedimientos Para Llegar a un Común Acuerdo.mp3",
+    );
     musicaFondo.loop = true;
-    musicaSorpresa = new Audio("sorpresa.mp3");
+    musicaSorpresa = new Audio("Que los Cumpla Feliz.mp3");
   } catch (e) {
     console.error(
       "Error al cargar los archivos de audio. Asegúrate de que existen.",
@@ -45,6 +50,20 @@ document.addEventListener("DOMContentLoaded", () => {
       pantallaInicio.style.display = "none";
     }, 500);
   });
+  // PASO 1.5: Botón para pausar/reproducir la música de fondo
+  btnMusicaFondo.addEventListener("click", () => {
+    if (musicaFondo) {
+      if (musicaFondoPausada) {
+        musicaFondo.play();
+        btnMusicaFondo.textContent = "Pausar música ⏸️";
+        musicaFondoPausada = false;
+      } else {
+        musicaFondo.pause();
+        btnMusicaFondo.textContent = "Reproducir música ▶️";
+        musicaFondoPausada = true;
+      }
+    }
+  });
 
   // PASO 2: Cuando hace clic en "Soplar las velas" (Tu código del pastel interactivo)
   btnSoplar.addEventListener("click", () => {
@@ -66,7 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100);
 
     // Ocultamos el botón
-    btnSoplar.style.display = "none";
+    // Ocultamos el contenedor de botones del pastel
+    controlesPastel.style.display = "none";
 
     // Pausa de 3 segundos para ver la animación
     setTimeout(() => {
@@ -139,7 +159,12 @@ document.addEventListener("DOMContentLoaded", () => {
     humo.classList.add("oculto");
 
     // Mostrar de nuevo el botón de soplar
-    btnSoplar.style.display = "inline-block";
+    // Mostrar de nuevo los botones del pastel
+    controlesPastel.style.display = "flex";
+
+    // Resetear el botón de música de fondo por si se quedó en "Reproducir"
+    musicaFondoPausada = false;
+    btnMusicaFondo.textContent = "Pausar música ⏸️";
 
     // Resetear el botón de música por si se quedó en "Reproducir"
     musicaPausada = false;
