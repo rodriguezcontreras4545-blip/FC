@@ -230,29 +230,35 @@ body {
 
 /* Animación de parpadeo de llama */
 /* La magia del soplido en versión gigante */
+/* La magia del soplido: más concentrado y pegado al pastel */
 @keyframes nubeHumo {
     0% {
         opacity: 0;
         transform: translateY(0) scale(1);
-        /* Sombras más grandes y color 100% sólido (el 1 al final) */
-        box-shadow: 
-            -40px -20px 15px 15px rgba(240, 240, 240, 1),
-            0px -20px 15px 15px rgba(240, 240, 240, 1),
-            40px -20px 15px 15px rgba(240, 240, 240, 1);
-        filter: blur(3px);
+        /* El humo nace exactamente en la posición de las 3 velas */
+        box-shadow:
+            -30px -15px 15px 15px rgba(240, 240, 240, 0.9),
+            0px -15px 15px 15px rgba(240, 240, 240, 0.9),
+            30px -15px 15px 15px rgba(240, 240, 240, 0.9);
+        filter: blur(4px);
     }
+
     15% {
-        opacity: 1; /* Se vuelve totalmente opaco casi al instante */
+        opacity: 1;
+        /* Se hace sólido rápidamente al soplar */
     }
+
     100% {
         opacity: 0;
-        transform: translateY(-130px) scale(4); /* Sube más y crece el cuádruple de su tamaño */
-        /* Las nubes se expanden muchísimo más a los lados */
-        box-shadow: 
-            -100px -60px 40px 40px rgba(220, 220, 220, 0.6),
-            0px -120px 50px 50px rgba(220, 220, 220, 0.6),
-            100px -50px 40px 40px rgba(220, 220, 220, 0.6);
-        filter: blur(15px);
+        /* Sube solo un poco (-60px) y crece moderadamente (scale 1.8) */
+        transform: translateY(-60px) scale(1.8);
+        /* Las bolitas de humo se mantienen cerca del centro */
+        box-shadow:
+            -40px -40px 20px 20px rgba(220, 220, 220, 0.3),
+            0px -50px 25px 25px rgba(220, 220, 220, 0.3),
+            40px -40px 20px 20px rgba(220, 220, 220, 0.3);
+        filter: blur(8px);
+        /* Un difuminado más suave */
     }
 }
 
@@ -286,10 +292,13 @@ body {
 .pastel-contenedor.sin-luz {
     filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
 }
+
 /* Clase para apagar las llamas por completo */
 .apagada {
     opacity: 0 !important;
     transform: scale(0) !important;
-    animation: none !important;  /* Esto detiene el parpadeo que mantenía la luz viva */
-    box-shadow: none !important; /* Elimina cualquier rastro de luz naranja */
+    animation: none !important;
+    /* Esto detiene el parpadeo que mantenía la luz viva */
+    box-shadow: none !important;
+    /* Elimina cualquier rastro de luz naranja */
 }
