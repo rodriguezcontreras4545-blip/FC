@@ -90,4 +90,59 @@ document.addEventListener("DOMContentLoaded", () => {
       seccionCarta.classList.add("mostrar-carta");
     }, 3000);
   });
+  // =========================================
+  // LÓGICA DE LOS NUEVOS BOTONES
+  // =========================================
+
+  const btnRegresar = document.getElementById("btn-regresar");
+  const btnMusica = document.getElementById("btn-musica");
+  let musicaPausada = false;
+
+  // 1. Botón de Pausar/Reproducir Música
+  btnMusica.addEventListener("click", () => {
+    if (musicaSorpresa) {
+      if (musicaPausada) {
+        musicaSorpresa.play();
+        btnMusica.textContent = "Pausar música ⏸️";
+        musicaPausada = false;
+      } else {
+        musicaSorpresa.pause();
+        btnMusica.textContent = "Reproducir música ▶️";
+        musicaPausada = true;
+      }
+    }
+  });
+
+  // 2. Botón de Volver al Pastel (Resetear animaciones)
+  btnRegresar.addEventListener("click", () => {
+    // Pausar música de sorpresa y volver a poner la de fondo
+    if (musicaSorpresa) {
+      musicaSorpresa.pause();
+      musicaSorpresa.currentTime = 0; // Reinicia la canción sorpresa al segundo 0
+    }
+    if (musicaFondo) musicaFondo.play();
+
+    // Ocultar la carta
+    seccionCarta.classList.add("oculto");
+    seccionCarta.classList.remove("mostrar-carta");
+
+    // Restaurar el pastel y quitar la clase de desvanecimiento
+    seccionPastel.classList.remove("oculto", "ocultar-suave");
+    document.querySelector(".pastel-contenedor").classList.remove("sin-luz");
+
+    // Encender las velas de nuevo
+    const llamas = document.querySelectorAll(".llama");
+    llamas.forEach((llama) => llama.classList.remove("apagada"));
+
+    // Ocultar y resetear el humo
+    humo.classList.remove("activo");
+    humo.classList.add("oculto");
+
+    // Mostrar de nuevo el botón de soplar
+    btnSoplar.style.display = "inline-block";
+
+    // Resetear el botón de música por si se quedó en "Reproducir"
+    musicaPausada = false;
+    btnMusica.textContent = "Pausar música ⏸️";
+  });
 });

@@ -318,3 +318,23 @@ body {
         transform: scale(0.9); 
     }
 }
+/* Controles debajo de la carta */
+.controles-extra {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre los botones */
+    flex-wrap: wrap; /* Asegura que se vean bien en celulares */
+}
+
+/* Estilo para botones secundarios */
+.boton-secundario {
+    background-color: transparent;
+    color: var(--color-texto);
+    border: 2px solid var(--color-boton);
+}
+
+.boton-secundario:hover {
+    background-color: var(--color-boton);
+    color: white;
+}
