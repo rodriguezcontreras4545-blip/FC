@@ -302,3 +302,19 @@ body {
     box-shadow: none !important;
     /* Elimina cualquier rastro de luz naranja */
 }
+/* Transición suave para ocultar el pastel */
+.ocultar-suave {
+    animation: desvanecer 0.5s ease forwards;
+    pointer-events: none; /* Evita interacciones mientras desaparece */
+}
+
+@keyframes desvanecer {
+    from { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+    to { 
+        opacity: 0; 
+        transform: scale(0.9); 
+    }
+}

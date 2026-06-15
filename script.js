@@ -70,6 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Pausa de 3 segundos para ver la animación
     setTimeout(() => {
+      seccionPastel.classList.add("ocultar-suave");
+    }, 2500);
+
+    // A los 3 segundos, lo quitamos del espacio por completo y entra la carta
+    setTimeout(() => {
       // Iniciamos la música de la sorpresa si cargó
       if (musicaSorpresa) {
         musicaSorpresa
@@ -77,10 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
           .catch((e) => console.log("Audio sorpresa bloqueado o no existe."));
       }
 
-      // Ocultamos toda la sección del pastel
+      // Ocultamos el espacio físico del pastel
       seccionPastel.classList.add("oculto");
 
-      // Mostramos la carta
+      // Mostramos la carta con su propia animación de entrada
       seccionCarta.classList.remove("oculto");
       seccionCarta.classList.add("mostrar-carta");
     }, 3000);
