@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "fondo.mp3",
     );
     musicaFondo.loop = true;
-    musicaSorpresa = new Audio("pastel.mp3");
+    musicaSorpresa = new Audio("pastel2.mp3");
   } catch (e) {
     console.error(
       "Error al cargar los archivos de audio. Asegúrate de que existen.",
