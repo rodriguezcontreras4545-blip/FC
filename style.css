@@ -13,7 +13,7 @@
 /* Estilos generales */
 /* Estilos generales */
 body {
-    background-image: url('fondo.jpg'); /* El nombre de tu imagen */
+    background-image: url('fondo.png'); /* El nombre de tu imagen */
     background-size: cover;             /* Hace que la imagen cubra toda la pantalla */
     background-position: center;        /* Centra la imagen */
     background-attachment: fixed;       /* Evita que la imagen se mueva al hacer scroll */
