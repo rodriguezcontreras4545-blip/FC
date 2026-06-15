@@ -1,13 +1,13 @@
 /* Paleta de colores (Tonos Morados) */
 :root {
-    --color-fondo: #693e7c;       /* Morado muy claro casi blanco */
-    --color-tarjeta: #ffffff;     /* Blanco para el contenedor */
-    --color-titulo: #5b2c6f;      /* Morado oscuro y elegante */
-    --color-boton: #8e44ad;       /* Morado vibrante */
-    --color-boton-hover: #732d91; /* Morado más oscuro para el efecto hover */
-    --color-carta: #e8daef;       /* Lila suave para el sobre */
-    --color-borde-carta: #9b59b6; /* Morado medio para el detalle */
-    --color-texto: #333333;
+    /* Usamos RGBA para el color oscuro con 85% de opacidad (el 0.85 al final) */
+    --color-tarjeta: rgba(25, 20, 35, 0.85); 
+    --color-titulo: #e8daef;      /* Lila claro para que el título resalte en la oscuridad */
+    --color-boton: #8e44ad;       /* Mantenemos tu botón morado */
+    --color-boton-hover: #732d91; 
+    --color-carta: rgba(45, 35, 55, 0.8); /* El sobre de la carta también oscuro y un poco transparente */
+    --color-borde-carta: #9b59b6; 
+    --color-texto: #f0f0f0;       /* Texto en color blanco/gris muy claro */
 }
 
 /* Estilos generales */
@@ -28,11 +28,14 @@ body {
 
 .container {
     background-color: var(--color-tarjeta);
-    padding: 40px;
+    color: var(--color-texto); /* Asegura que todo el texto dentro sea claro */
+    padding: 50px; /* Aumentamos el espacio interior (antes era 40px) */
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(142, 68, 173, 0.15); /* Sombra con un ligero tinte morado */
-    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6); /* Sombra más fuerte y oscura para que resalte sobre la imagen */
+    max-width: 750px; /* ¡Aquí lo hacemos más grande! (antes era 500px) */
     width: 90%;
+    backdrop-filter: blur(6px); /* Esto hace que el fondo se vea borroso a través de la transparencia */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Un borde súper sutil para enmarcarlo mejor */
 }
 
 .titulo {
